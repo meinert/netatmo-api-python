@@ -30,7 +30,7 @@ if someLost and 'external' in someLost : message.append("Sensor is no longer act
 
 # Condition 3 : The outdoor module battery is dying
 volts = devList.lastData()['external']['battery_vp'] # I suspect that this is the total Voltage in mV
-if volts < 5000 : message.append("External module battery needs replacement") # I will adjust the threshold over time
+if volts < 5000 : message.append("External module battery needs replacement") # See https://dev.netatmo.com/dev/resources/technical/reference/weatherstation for battery status explanation, e.g. 4000 = low
 
 # If one condition is present, at least, send an alarm by SMS
 if message :
